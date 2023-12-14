@@ -1,1 +1,77 @@
 Let's Learn....
+
+//First
+public class TirePressureMonitor
+{
+    double minPressure;
+    double maxPressure;
+    double tirePressure;
+
+    public TirePressureMonitor(double minPressure, double maxPressure)
+    {
+        this.minPressure = minPressure;
+        this.maxPressure = maxPressure;
+        this.tirePressure = 0; 
+    }
+
+    public void updateHUD() 
+    {
+        System.out.println("Tire pressure: " + tirePressure);
+        if (tirePressure <= maxPressure  && tirePressure >=  minPressure) 
+        {
+            System.out.println("Tire pressure OK");
+        }
+        else 
+        {
+            System.out.println("Check the tire pressure!");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        
+        TirePressureMonitor tpm = new TirePressureMonitor(1.8, 2.5);
+        tpm.tirePressure = 2.1;
+        tpm.updateHUD();
+    }
+}
+
+//Second
+
+public class TirePressureMonitor
+{
+    private double minPressure;
+    private double maxPressure;
+    private double tirePressure;
+
+    public TirePressureMonitor(double minPressure, double maxPressure)
+    {
+        this.minPressure = minPressure;
+        this.maxPressure = maxPressure;
+        this.tirePressure = 0;
+    }
+
+    public void setTirePressure(double newPressure) 
+    {
+        this.tirePressure = newPressure;
+    }
+
+    public void updateHUD()
+    {
+        System.out.println("Tire pressure: " + tirePressure);
+        if (tirePressure >= minPressure && tirePressure <= maxPressure) 
+        {
+            System.out.println("Tire pressure OK");
+        } else {
+            System.out.println("Check the tire pressure!");
+        }
+    }
+
+    public static void main(String[] args) 
+    {
+        TirePressureMonitor tpm = new TirePressureMonitor(1.8, 2.5);
+        tpm.setTirePressure(2.1); 
+        tpm.updateHUD();
+    }
+}
+
